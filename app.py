@@ -19,10 +19,10 @@ try:
     all_sheets = load_all_data(FILE_PATH)
     
     # Przypisanie arkuszy do zmiennych
-    df_druzyny = all_sheets['druzyny']
-    df_sklady = all_sheets['sklady']
-    df_terminarz = all_sheets['terminarz']
-    df_wyniki = all_sheets['wyniki']
+    df_druzyny = all_sheets['Druzyny']
+    df_sklady = all_sheets['Sklady']
+    df_terminarz = all_sheets['Terminarz']
+    df_wyniki = all_sheets['Wyniki']
 
     # --- BOCZNY PANEL NAWIGACJI ---
     st.sidebar.title("🏐 Menu Ligi")
