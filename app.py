@@ -8,7 +8,7 @@ st.set_page_config(page_title="Liga Siatkówki - Manager", layout="wide")
 @st.cache_data(ttl=300)  # Odświeżaj co 5 minut
 def load_all_data(file_path):
     # Wczytujemy wszystkie arkusze do słownika DataFrames
-    return pd.read_excel(file_path, sheet_name=None)
+    return pd.read_excel(file_path, sheet_name=None,engine='openpyxl')
 
 # --- ŁADOWANIE DANYCH ---
 # Możesz zamienić 'liga_siatkowki.xlsx' na URL do pliku na GitHubie/Google Drive
