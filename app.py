@@ -12,7 +12,8 @@ def load_all_data(file_path):
 
 # --- ŁADOWANIE DANYCH ---
 # Możesz zamienić 'liga_siatkowki.xlsx' na URL do pliku na GitHubie/Google Drive
-FILE_PATH = 'https://docs.google.com/spreadsheets/d/13-z6353IMtVxsvLVqRc4FJFh5sbAkQnvQrAXaaBRVHc/edit?usp=sharing'
+FILE_PATH = 'https://docs.google.com/spreadsheets/d/13-z6353IMtVxsvLVqRc4FJFh5sbAkQnvQrAXaaBRVHc/export?format=xlsx'
+
 
 try:
     all_sheets = load_all_data(FILE_PATH)
