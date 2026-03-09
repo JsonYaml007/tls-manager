@@ -80,12 +80,12 @@ try:
 
     elif page == "Drużyny i Składy":
         st.header("👥 Drużyny")
-        wybrana_druzyna = st.selectbox("Wybierz drużynę, aby zobaczyć skład:", df_druzyny['Nazwa'])
+        wybrana_druzyna = st.selectbox("Wybierz drużynę, aby zobaczyć skład:", df_druzyny['Nazwa_druzyny'])
         
         col1, col2 = st.columns(2)
         with col1:
             st.subheader("Informacje")
-            st.write(df_druzyny[df_druzyny['Nazwa'] == wybrana_druzyna])
+            st.write(df_druzyny[df_druzyny['Nazwa_druzyny'] == wybrana_druzyna])
         with col2:
             st.subheader("Skład")
             sklad = df_sklady[df_sklady['Druzyna'] == wybrana_druzyna]
