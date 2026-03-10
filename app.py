@@ -38,9 +38,6 @@ try:
         # Łączymy wyniki z terminarzem, aby wiedzieć kto grał
         full_results = pd.merge(df_wyniki, df_terminarz, on='ID_Meczu')
 
-        st.write("Podgląd połączonych danych:")
-        st.dataframe(full_results)
-
         for _, row in full_results.iterrows():
             gosp, gosc = row['Druzyna1_x'], row['Druzyna2_x']
             sG, sC = int(row['Sety_druzyna1']), int(row['Sety_druzyna2'])
