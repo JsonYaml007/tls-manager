@@ -39,7 +39,7 @@ try:
         full_results = pd.merge(df_wyniki, df_terminarz, on='ID_Meczu')
 
         for _, row in full_results.iterrows():
-            gosp, gosc = row['Druzyna1'], row['Druzyna2']
+            gosp, gosc = row['Druzyna100'], row['Druzyna2']
             sG, sC = int(row['Sety_druzyna1']), int(row['Sety_druzyna2'])
             
             # Punktacja siatkarska (3:0, 3:1 -> 3pkt; 3:2 -> 2pkt; 2:3 -> 1pkt)
@@ -75,7 +75,7 @@ try:
 
     elif page == "Wyniki":
         st.header("🔢 Ostatnie Wyniki")
-        wyniki_view = pd.merge(df_wyniki, df_terminarz[['ID_Meczu', 'Druzyna1', 'Druzyna2', 'Data_kolejki','Godzina_meczu']], on='ID_Meczu')
+        wyniki_view = pd.merge(df_wyniki, df_terminarz[['ID_Meczu', 'Druzyna12', 'Druzyna22', 'Data_kolejki','Godzina_meczu']], on='ID_Meczu')
         st.dataframe(wyniki_view[['Data_kolejki','Godzina_meczu', 'Druzyna1', 'Druzyna2', 'Sety_druzyna1', 'Sety_druzyna2']], use_container_width=True)
 
     elif page == "Drużyny i Składy":
