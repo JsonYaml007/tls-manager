@@ -30,13 +30,13 @@ try:
         ["Tabela Główna", "Terminarz", "Wyniki", "Drużyny i Składy"])
 
     # --- LOGIKA PRZELICZANIA TABELI ---
-    def calculate_standings(df_res, df_teams):
+    def calculate_standings(df_wyniki, df_druzyny):
         # Tworzymy pustą tabelę na bazie listy drużyn
         stats = {team: {'Mecze': 0, 'Punkty': 0, 'Sety_W': 0, 'Sety_P': 0} 
-                 for team in df_teams['Nazwa_druzyny']}
+                 for team in df_druzyny['Nazwa_druzyny']}
         
         # Łączymy wyniki z terminarzem, aby wiedzieć kto grał
-        full_results = pd.merge(df_res, df_terminarz, on='ID_Meczu')
+        full_results = pd.merge(df_wyniki, df_terminarz, on='ID_Meczu')
 
         for _, row in full_results.iterrows():
             gosp, gosc = row['Druzyna1'], row['Druzyna2']
