@@ -39,15 +39,15 @@ try:
         full_results = pd.merge(df_res, df_terminarz, on='ID_Meczu')
 
         for _, row in full_results.iterrows():
-            gosp, gosc = row['Gospodarz'], row['Gosc']
-            sG, sC = int(row['Sety_Gospodarz']), int(row['Sety_Gosc'])
+            gosp, gosc = row['Druzyna1'], row['Druzyna2']
+            sG, sC = int(row['Sety_druzyna1']), int(row['Sety_druzyna2'])
             
             # Punktacja siatkarska (3:0, 3:1 -> 3pkt; 3:2 -> 2pkt; 2:3 -> 1pkt)
             pG, pC = 0, 0
-            if sG == 3 and sC < 2: pG, pC = 3, 0
-            elif sG == 3 and sC == 2: pG, pC = 2, 1
-            elif sC == 3 and sG < 2: pG, pC = 0, 3
-            elif sC == 3 and sG == 2: pG, pC = 1, 2
+            if sG == 2 and sC < 1: pG, pC = 3, 0
+            elif sG == 2 and sC == 1: pG, pC = 2, 1
+            elif sC == 2 and sG < 1: pG, pC = 0, 3
+            elif sC == 2 and sG == 1: pG, pC = 1, 2
 
             for team, p, sw, sp in [(gosp, pG, sG, sC), (gosc, pC, sC, sG)]:
                 if team in stats:
