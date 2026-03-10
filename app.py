@@ -75,8 +75,8 @@ try:
 
     elif page == "Wyniki":
         st.header("🔢 Ostatnie Wyniki")
-        wyniki_view = pd.merge(df_wyniki, df_terminarz[['ID_Meczu', 'Gospodarz', 'Gosc', 'Data']], on='ID_Meczu')
-        st.dataframe(wyniki_view[['Data', 'Gospodarz', 'Gosc', 'Sety_Gospodarz', 'Sety_Gosc', 'Małe_Punkty']], use_container_width=True)
+        wyniki_view = pd.merge(df_wyniki, df_terminarz[['ID_Meczu', 'Druzyna1', 'Druzyna2', 'Data_kolejki','Godzina_meczu']], on='ID_Meczu')
+        st.dataframe(wyniki_view[['Data_kolejki','Godzina_meczu', 'Druzyna1', 'Druzyna2', 'Sety_druzyna1', 'Sety_druzyna2']], use_container_width=True)
 
     elif page == "Drużyny i Składy":
         st.header("👥 Drużyny")
