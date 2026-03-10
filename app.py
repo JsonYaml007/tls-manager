@@ -81,7 +81,7 @@ try:
         wyniki_view = pd.merge(df_wyniki, df_terminarz[['ID_Meczu', 'Druzyna1', 'Druzyna2', 'Data_kolejki','Godzina_meczu','Wynik']], on='ID_Meczu')
         st.dataframe(wyniki_view[['Data_kolejki','Godzina_meczu', 'Druzyna1_x', 'Druzyna2_x', 'Wynik']], use_container_width=True)
 
-    elif page == "Drużyny i Składy"
+    elif page == "Drużyny i Składy":
         st.header("👥 Drużyny")
         wybrana_druzyna = st.selectbox("Wybierz drużynę, aby zobaczyć skład:", df_druzyny['Nazwa_druzyny'])
         
