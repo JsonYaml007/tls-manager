@@ -42,7 +42,7 @@ try:
         st.dataframe(full_results)
 
         for _, row in full_results.iterrows():
-            gosp, gosc = row['Druzyna1'], row['Druzyna2']
+            gosp, gosc = row['Druzyna1_x'], row['Druzyna2_x']
             sG, sC = int(row['Sety_druzyna1']), int(row['Sety_druzyna2'])
             
             # Punktacja siatkarska (3:0, 3:1 -> 3pkt; 3:2 -> 2pkt; 2:3 -> 1pkt)
