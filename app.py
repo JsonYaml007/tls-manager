@@ -89,7 +89,7 @@ try:
         with col2:
             st.subheader("Skład")
             sklad = df_sklady[df_sklady['Nazwa_druzyny'] == wybrana_druzyna]
-            st.write(sklad[['Numer_zawodnika', 'Imie_zawodnika','Nazwisko_zawodnika']])
+            st.write(sklad[['Nr_zawodnika', 'Imie_zawodnika','Nazwisko_zawodnika']])
 
 except Exception as e:
     st.error(f"Błąd ładowania pliku: {e}")
