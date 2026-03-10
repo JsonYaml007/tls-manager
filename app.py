@@ -38,8 +38,11 @@ try:
         # Łączymy wyniki z terminarzem, aby wiedzieć kto grał
         full_results = pd.merge(df_wyniki, df_terminarz, on='ID_Meczu')
 
+        st.write("Kolumny w df_wyniki:", df_wyniki.columns.tolist())
+        st.write("Kolumny w df_terminarz:", df_terminarz.columns.tolist())
+
         for _, row in full_results.iterrows():
-            gosp, gosc = row['Druzyna100'], row['Druzyna2']
+            gosp, gosc = row['Druzyna1'], row['Druzyna2']
             sG, sC = int(row['Sety_druzyna1']), int(row['Sety_druzyna2'])
             
             # Punktacja siatkarska (3:0, 3:1 -> 3pkt; 3:2 -> 2pkt; 2:3 -> 1pkt)
